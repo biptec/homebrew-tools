@@ -5,21 +5,21 @@
 class AwsSsmParams < Formula
   desc "Terminal UI and CLI for AWS SSM Parameter Store"
   homepage "https://github.com/biptec/aws-ssm-params"
-  version "0.4.0"
+  version "0.4.1"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/biptec/aws-ssm-params/releases/download/v0.4.0/aws-ssm-params-v0.4.0-darwin-amd64.tar.gz"
-      sha256 "965fe72290ff1f61857a3534f31007c94dc8e7a23b55ecaa81ca7e6d304b19f4"
+      url "https://github.com/biptec/aws-ssm-params/releases/download/v0.4.1/aws-ssm-params-v0.4.1-darwin-amd64.tar.gz"
+      sha256 "4a3ee2ee0a7a590f2c823facd7e948178c72b1eaa24837a322133b05b736f2bb"
 
       define_method(:install) do
         bin.install "aws-ssm-params"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/biptec/aws-ssm-params/releases/download/v0.4.0/aws-ssm-params-v0.4.0-darwin-arm64.tar.gz"
-      sha256 "1f240a6f07ee3a7a54d7180c60285768f636a516c621f6e7efb2d7d548e46431"
+      url "https://github.com/biptec/aws-ssm-params/releases/download/v0.4.1/aws-ssm-params-v0.4.1-darwin-arm64.tar.gz"
+      sha256 "f0016b6ad1e377a846db913108acce2e1a895312c8d593abc217156b3d01821c"
 
       define_method(:install) do
         bin.install "aws-ssm-params"
@@ -29,15 +29,15 @@ class AwsSsmParams < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/biptec/aws-ssm-params/releases/download/v0.4.0/aws-ssm-params-v0.4.0-linux-amd64.tar.gz"
-      sha256 "a03950c5b369121491913c59aa11dd204f39048db300a6cf58a75cce8f3123c6"
+      url "https://github.com/biptec/aws-ssm-params/releases/download/v0.4.1/aws-ssm-params-v0.4.1-linux-amd64.tar.gz"
+      sha256 "af4b5088bbf8507e388855c96ff3fa6e2560c7140fc5947437c568994d9d9c6d"
       define_method(:install) do
         bin.install "aws-ssm-params"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/biptec/aws-ssm-params/releases/download/v0.4.0/aws-ssm-params-v0.4.0-linux-arm64.tar.gz"
-      sha256 "6a47c9ebacf67688b15bd9df01e9df2a4d1ddab24a1aae1b191b7b3cc01933f9"
+      url "https://github.com/biptec/aws-ssm-params/releases/download/v0.4.1/aws-ssm-params-v0.4.1-linux-arm64.tar.gz"
+      sha256 "3a80ad2d1101ee61376e3437d135b78f5899e7deaea133376f5bce3959f8c6bf"
       define_method(:install) do
         bin.install "aws-ssm-params"
       end
@@ -45,6 +45,6 @@ class AwsSsmParams < Formula
   end
 
   test do
-    system "#{bin}/aws-ssm-params", "--help"
+    system "#{bin}/aws-ssm-params", "--version"
   end
 end
